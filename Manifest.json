@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "과제 확인 Extension",
+  "version": "1.25.330.2",
+  "description": "동양미래대학교 eClass 로그인 감지 후 자동 실행",
+  "permissions": ["storage", "scripting", "activeTab", "tabs"],
+  "host_permissions": ["https://eclass.dongyang.ac.kr/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon" : "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://eclass.dongyang.ac.kr/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
